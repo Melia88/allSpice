@@ -15,3 +15,4 @@ namespace allSpace.Models
     public string Description { get; set; }
   }
 }
+// NOTE aparently type is a reserved keyword so now things in edit dont like us
