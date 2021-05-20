@@ -97,6 +97,7 @@ namespace allSpace.Controllers
       {
         Account userInfo = await HttpContext.GetUserInfoAsync<Account>();
         // _rService.Update(id, userInfo.Id);
+        update.CreatorId = userInfo.Id;
         update.Id = id;
         Recipe updated = _rService.Update(update);
         return Ok(updated);

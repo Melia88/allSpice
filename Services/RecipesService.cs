@@ -52,6 +52,12 @@ namespace allSpace.Services
     internal Recipe Update(Recipe update)
     {
       Recipe original = GetById(update.Id);
+      // check if update.creatorId is the same as original.creator id
+      if (update.CreatorId != original.CreatorId)
+      {
+        throw new Exception("You cant do that!");
+      }
+
       original.Type = update.Type.Length > 0 ? update.Type : original.Type;
       original.Name = update.Name.Length > 0 ? update.Name : original.Name;
       original.Description = update.Description.Length > 0 ? update.Description : original.Description;
